@@ -84,11 +84,32 @@ $(function() {
          
         });
 
-      
-    /* TODO: Write a new test suite named "New Feed Selection" */
+        describe('New Feed Selection',function() {
+                      
+                  beforeEach(function(done) {
+         
+                    loadFeed(0,function(){
+                        done();                  
+                    })             
+                    });
+                        
+               it('loadFeed function completes its work',function() {
 
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
+                for(var i=0; i<allFeeds.length; i++) {
+                    var con1=$('.feed .entry')[i];        ///test the conatin of first feed not equla the second feed
+                    var con2=$('.feed .entry')[i+1];       //when loadfeed called contain changed the conatin of ech feed not                                                           //be the same is updated when loadfeed called .
+                    if(i==allFeeds.length-1)
+                    {   
+                          con2=$('.feed .entry')[0];
+                          expect(con2).not.toContain(con1);
+                    }
+                    else {
+                    expect(con2).not.toContain(con1);
+                }
+
+                }      
+          });
+         
+        });
+
 }());
