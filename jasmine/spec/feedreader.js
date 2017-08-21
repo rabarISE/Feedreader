@@ -93,11 +93,12 @@ $(function() {
                     })             
                     });
                         
-               it('loadFeed function completes its work',function() {
+               it('Contain update when loadfeed called',function() {
 
                 for(var i=0; i<allFeeds.length; i++) {
                     var con1=$('.feed .entry')[i];        ///test the conatin of first feed not equla the second feed
-                    var con2=$('.feed .entry')[i+1];       //when loadfeed called contain changed the conatin of ech feed not                                                           //be the same is updated when loadfeed called .
+                    var con2=$('.feed .entry')[i+1];       //when loadfeed called contain changed the conatin of ech feed not
+                                                           //be the same is updated when loadfeed called .
                     if(i==allFeeds.length-1)
                     {   
                           con2=$('.feed .entry')[0];
